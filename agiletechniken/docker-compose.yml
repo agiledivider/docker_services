@@ -1,0 +1,13 @@
+services:
+  agiletechniken:
+    image: devisive/agiletechniken
+    container_name: agiletechniken
+    environment:
+      - VIRTUAL_HOST=agiletechniken.creativepeoplespace.de
+      - LETSENCRYPT_HOST=agiletechniken.creativepeoplespace.de
+    networks:
+      - webproxy
+
+networks:
+  webproxy:
+    external: true
