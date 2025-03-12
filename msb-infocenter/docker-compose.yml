@@ -1,0 +1,15 @@
+services:
+  agiletechniken:
+    image: falkkuehnel/msb-infocenter
+    container_name: msb-infocenter
+    environment:
+      - VIRTUAL_HOST=msb-infocenter.idiot.games,status.makerspacebonn.de
+      - LETSENCRYPT_HOST=msb-infocenter.idiot.games,status.makerspacebonn.de
+    env_file:
+      - env_infocenter
+    networks:
+      - webproxy
+
+networks:
+  webproxy:
+    external: true
