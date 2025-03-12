@@ -7,8 +7,6 @@ services:
       - LETSENCRYPT_HOST=agiletechniken.creativepeoplespace.de
     networks:
       - webproxy
-    ports:
-      - 80:80
 
 networks:
   webproxy:
