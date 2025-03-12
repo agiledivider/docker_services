@@ -6,9 +6,14 @@ services:
       - ./config:/mosquitto/config
       - ./data:/mosquitto/data
       - ./log:/mosquitto/log
+      - certificates:/mosquitto/certificates
     ports:
       - 1883:1883
       - 9001:9001
     stdin_open: true
     tty: true
+
+  volumes:
+    certificates:
+      external: true
     
