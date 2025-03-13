@@ -1,0 +1,13 @@
+services:
+  agiletechniken:
+    image: devisive/leanminded
+    container_name: leanminded
+    environment:
+      - VIRTUAL_HOST=preview.lean-minded.de
+      - LETSENCRYPT_HOST=preview.lean-minded.de
+    networks:
+      - webproxy
+
+networks:
+  webproxy:
+    external: true
