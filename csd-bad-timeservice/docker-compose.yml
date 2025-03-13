@@ -1,0 +1,13 @@
+services:
+  agiletechniken:
+    image: devisive/csd-bad-time-service
+    container_name: csd-timeservice
+    environment:
+      - VIRTUAL_HOST=csd-timeservice.idiot.games
+      - LETSENCRYPT_HOST=csd-timeservice.idiot.games
+    networks:
+      - webproxy
+
+networks:
+  webproxy:
+    external: true
