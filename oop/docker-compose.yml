@@ -1,0 +1,13 @@
+services:
+  agiletechniken:
+    image: falkkuehnel/oop
+    container_name: oop
+    environment:
+      - VIRTUAL_HOST=oop.idiot.games
+      - LETSENCRYPT_HOST=oop.idiot.games
+    networks:
+      - webproxy
+
+networks:
+  webproxy:
+    external: true
