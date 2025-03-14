@@ -1,5 +1,5 @@
 services:
-  agiletechniken:
+  oop:
     image: falkkuehnel/oop
     container_name: oop
     environment:

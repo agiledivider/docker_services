@@ -1,5 +1,5 @@
 services:
-  agiletechniken:
+  badtimeservice:
     image: devisive/csd-bad-time-service
     container_name: csd-timeservice
     environment:

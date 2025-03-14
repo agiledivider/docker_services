@@ -1,5 +1,5 @@
 services:
-  agiletechniken:
+  creativepeoplespace:
     image: devisive/creativepeoplespace
     container_name: creativepeoplespace
     environment:

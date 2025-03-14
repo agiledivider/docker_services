@@ -1,5 +1,5 @@
 services:
-  agiletechniken:
+  leanminded:
     image: devisive/leanminded
     container_name: leanminded
     environment:
