@@ -1,0 +1,15 @@
+services:
+  msb-infocenter:
+    image: falkkuehnel/msb-inventory
+    container_name: msb-inventory
+    environment:
+      - VIRTUAL_HOST=msb-inventory.idiot.games,status.makerspacebonn.de
+      - LETSENCRYPT_HOST=msb-inventory.idiot.games,status.makerspacebonn.de
+    env_file:
+      - env_inventory
+    networks:
+      - webproxy
+
+networks:
+  webproxy:
+    external: true
