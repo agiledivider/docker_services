@@ -28,7 +28,13 @@ services:
     - ENABLE_SSL_PROXY=FALSE
     - DISPLAY_ERRORS=FALSE
     - TIMEZONE=Europe/Berlin
+    - VIRTUAL_HOST=freescout.idiot.games
+    - LETSENCRYPT_HOST=freescout.idiot.games
     restart: always
+    networks:
+      - freescout
+      - webproxy
+
 
   freescout-db:
     image: tiredofit/mariadb
@@ -43,6 +49,8 @@ services:
 
       - CONTAINER_NAME=freescout-db
     restart: always
+    networks:
+      - freescout
 
   freescout-db-backup:
     container_name: freescout-db-backup
@@ -64,3 +72,10 @@ services:
       - COMPRESSION=BZ
       - MD5=TRUE
     restart: always
+    networks:
+      - freescout
+      
+networks:
+  freescout:
+  webproxy:
+    external: true
