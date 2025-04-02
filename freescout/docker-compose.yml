@@ -4,6 +4,7 @@ services:
     container_name: freescout-app
     links:
     - freescout-db
+    shm_size: '2gb'
     volumes:
     ### If you want to perform customizations to the source and have access to it, then uncomment this line - This includes modules
     #- ./data:/www/html
