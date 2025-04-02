@@ -2,8 +2,6 @@ services:
   freescout-app:
     image: tiredofit/freescout
     container_name: freescout-app
-    ports:
-    - 80:80
     links:
     - freescout-db
     volumes:
@@ -74,7 +72,7 @@ services:
     restart: always
     networks:
       - freescout
-      
+
 networks:
   freescout:
   webproxy:
