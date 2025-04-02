@@ -1,6 +1,6 @@
 services:
   freescout-app:
-    image: tiredofit/freescout
+    image: tiredofit/freescout:latest
     container_name: freescout-app
     links:
     - freescout-db
