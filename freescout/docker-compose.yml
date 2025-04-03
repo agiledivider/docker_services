@@ -1,6 +1,6 @@
 services:
   freescout-app:
-    image: tbfren/freescout
+    image: bfren/freescout
     container_name: freescout-app
     links:
     - freescout-db
