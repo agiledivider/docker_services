@@ -1,10 +1,9 @@
 services:
   freescout-app:
-    image: tiredofit/freescout:latest
+    image: tbfren/freescout
     container_name: freescout-app
     links:
     - freescout-db
-    shm_size: '2gb'
     volumes:
     ### If you want to perform customizations to the source and have access to it, then uncomment this line - This includes modules
     #- ./data:/www/html
@@ -15,18 +14,20 @@ services:
     - ./logs/:/www/logs
     environment:
     - CONTAINER_NAME=freescout-app
+    - FREESCOUT_URL=https://freescout.idiot.games
     
-    - DB_HOST=freescout-db
-    - DB_NAME=freescout
-    - DB_USER=freescout
-    - DB_PASS=freescout
+    - FREESCOUT_ADMIN_FIRSTNAME=Falk
+    - FREESCOUT_ADMIN_LASTNAME="Kühnel"
+    - FREESCOUT_ADMIN_EMAIL=falk@makerspacebonn.de
+    - FREESCOUT_ADMIN_PASS=Passw0rd
+    - FREESCOUT_DB_CONN=mysql
+    - FREESCOUT_DB_NAME=freescout-db
+    - FREESCOUT_DB_USER=freescout
+    - FREESCOUT_DB_PASS=freescout
+    - FREESCOUT_DB_HOST=freescout-db
+    - FREESCOUT_DEBUG	1
+    - FREESCOUT_HTTPS true
 
-    - SITE_URL=https://freescout.idiot.games
-    - ADMIN_EMAIL=falk@makerspacebonn.de
-    - ADMIN_PASS=freescout
-    - ENABLE_SSL_PROXY=FALSE
-    - DISPLAY_ERRORS=FALSE
-    - TIMEZONE=Europe/Berlin
     - VIRTUAL_HOST=freescout.idiot.games
     - LETSENCRYPT_HOST=freescout.idiot.games
     restart: always
