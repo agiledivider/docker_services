@@ -1,6 +1,6 @@
 services:
   msb-bot:
-    image: falkkuehnel/msb-inventory
+    image: falkkuehnel/msb-bot
     container_name: msb-bot
     environment:
       - VIRTUAL_HOST=msb-bot.idiot.games
