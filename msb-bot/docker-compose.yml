@@ -9,6 +9,10 @@ services:
       - .env
     networks:
       - webproxy
+  volumes:
+      - type: bind
+        source: ./msb.prod.config.json
+        target: /usr/src/app/msb.config.json
 
 networks:
   webproxy:
