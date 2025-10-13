@@ -18,3 +18,7 @@ services:
 networks:
   webproxy:
     external: true
+
+volumes:
+  portainer_data:
+    external: true
