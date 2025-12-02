@@ -1,15 +1,18 @@
 services:
-  msb-infocenter:
+  msb-inventory:
     image: falkkuehnel/msb-inventory
     container_name: msb-inventory
     environment:
       - VIRTUAL_HOST=zeug.makerspacebonn.de
       - LETSENCRYPT_HOST=zeug.makerspacebonn.de
     env_file:
-      - env_inventory
+      - env_inventory  
     networks:
       - webproxy
-
+    volumes:
+      - inventory_images:/usr/public/container
 networks:
   webproxy:
     external: true
+volumes:
+  inventory_images:
