@@ -11,6 +11,7 @@ services:
       - webproxy
     volumes:
       - inventory_images:/usr/public/container
+    entrypoint: "sh ./run.sh"
 networks:
   webproxy:
     external: true
